@@ -1,0 +1,12 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <style src="Seite.css"></style>
+<title>Virussimulationstest</title>
+</head> <b>Virussimulationstest</b>
+<body style="background-image:url(background.jpeg);background-repeat: no-repeat;background-size: cover;">
+   	<script src="Seite.js"></script>
+	<button class="BrowserButton" type="button" onclick="Hallo('Hallo')">Browser</button>
+		
+</body>
+</html> 	
