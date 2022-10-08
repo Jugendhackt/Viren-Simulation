@@ -1,5 +1,5 @@
-.header {
-  display: inline-block;
+.wrapper-head {
+  text-align: center;
 }
 
 .header-logo {
@@ -19,4 +19,6 @@
 
 .mail-body {
   width: 30%;
+  margin: auto;
+  padding: 10px;
 }
