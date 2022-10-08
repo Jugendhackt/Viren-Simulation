@@ -47,7 +47,7 @@ def books():
                  VALUES (?, ?, ?)"""
         cursor = cursor.execute(sql, (id, cookies, viren))
         conn.commit() # pyright: ignore
-        return f"Book with the id: 0 created successfully", 201
+        return f"user with the id {0} created".format(request.form["id"]), 201
 
 
 @app.route("/book/<int:id>", methods=["GET", "PUT", "DELETE"])
