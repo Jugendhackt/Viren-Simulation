@@ -2,3 +2,15 @@ body{
     background-image: url("background.png");
     background-size: cover;
 }
+.BrowserButton{
+  width: 100px;
+  height: 100px;
+}
+.ExplorerButton{
+    width: 100px;
+    height: 100px;
+}
+.EmailButton{
+    width: 100px;
+    height: 100px;
+}
