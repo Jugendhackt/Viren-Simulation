@@ -90,6 +90,13 @@ def single_book(id):
         conn.commit() # pyright: ignore 
         return "user with the id {} has been  D E S T R O Y E D.".format(id), 200
 
+@app.route('/fertig', methods=['POST'])
+def fertig():
+    if request.method == 'POST':
+        data = request.get_json()
+        print(data)
+        return jsonify(data)
+
 
 if __name__ == "__main__":
     app.run()
