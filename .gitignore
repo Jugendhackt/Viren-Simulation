@@ -131,3 +131,4 @@ dmypy.json
 flask/database.db
 database.db
 test.py
+config.py
