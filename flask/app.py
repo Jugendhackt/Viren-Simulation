@@ -132,19 +132,19 @@ def mailvonpapa():
 def mailvoninsta():
     return render_template('mail/instagram/instagram.html')
     
-@app.route('mails/gewinner/gewinner.html')
+@app.route('/mails/gewinner/gewinner.html')
 def gewinnermail():
     return render_template('mail/gewinner/gewinner.html')
 
-@app.route('mails/mama/mama.html')
+@app.route('/mails/mama/mama.html')
 def emailvonmama():
     return render_template('mail/mama/mama.html')
 
-@app.route('mails/oma/oma.html')
+@app.route('/mails/oma/oma.html')
 def emailvonoma():
     return render_template('mail/oma/oma.html')
 
-@app.route('mails/pizza/pizza.html')
+@app.route('/mails/pizza/pizza.html')
 def pizzamail():
     return render_template('mail/pizza/pizza.html')
 
