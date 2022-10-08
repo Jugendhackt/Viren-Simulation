@@ -8,10 +8,10 @@
 		<div id="main">
 			<h1><center>Virussimulationstest</center></h1>
 			<center>
-			<iframe id="Itag" frameborder="10" width=1000px height="600px"></iframe>
+			<iframe id="Itag" frameborder="10" width=1200px height="600px"></iframe>
 			</center>
 		   <div>
-				<button class="BrowserButton" type="button" onclick="Hallo('Hallo')">
+				<button class="BrowserButton" type="button" onclick="Browser()">
 				<p class="textunterbutton">Browser</p></button>
 			</div>
 			<div>
@@ -29,7 +29,9 @@
 			document.getElementById("Itag").hidden = true;
 			document.getElementById("main").style.zIndex = -1;
 			function Browser(){
-
+				document.getElementById("Itag").hidden = false;		
+				document.getElementById("Itag").style.zIndex = 3    
+				document.getElementById("Itag").src="https://www.bing.com/?cc=de"	
     
 			}
 			function Explorer(){
