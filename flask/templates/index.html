@@ -32,6 +32,10 @@
 	</div>
 	<script>
 		function start() {
+			fetch("http://localhost:500/api/timer/start", {
+				method: 'POST'
+			}).then((resp) => resp.json())
+			.then((data) => console.log(data));
 			window.location.href="desktop";
 		}
 	</script>
