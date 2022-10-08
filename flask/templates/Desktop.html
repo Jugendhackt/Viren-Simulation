@@ -5,24 +5,29 @@
 	<title >Virussimulationstest</title>
 	</head> 
 	<body >
-		<h1><center>Virussimulationstest</center></h1>
-		<iframe id="Itag" frameborder="10" width=1000px height="300px"></iframe>
-	   <div>
-			<button class="BrowserButton" type="button" onclick="Hallo('Hallo')">
-			<p class="textunterbutton">Browser</p></button>
-		</div>
-		<div>
-			<button class="ExplorerButton" type="button" onclick="Hallo('Hallo')">
-			<p class="textunterbutton">Explorer</p></button>
-		</div>
-		<div>
-			<button class="EmailButton" type="button" onclick="Email()">
-			<p class="textunterbutton">E-mail</p>
-			</button>
+		<div id="main">
+			<h1><center>Virussimulationstest</center></h1>
+			<center>
+			<iframe id="Itag" frameborder="10" width=1000px height="600px"></iframe>
+			</center>
+		   <div>
+				<button class="BrowserButton" type="button" onclick="Hallo('Hallo')">
+				<p class="textunterbutton">Browser</p></button>
+			</div>
+			<div>
+				<button class="ExplorerButton" type="button" onclick="Hallo('Hallo')">
+				<p class="textunterbutton">Explorer</p></button>
+			</div>
+			<div>
+				<button class="EmailButton" type="button" onclick="Email()">
+				<p class="textunterbutton">E-mail</p>
+				</button>
+			</div>
 		</div>
 	
 		<script >
 			document.getElementById("Itag").hidden = true;
+			document.getElementById("main").style.zIndex = -1;
 			function Browser(){
 
     
@@ -33,7 +38,7 @@
 			}
 			function Email(){
 				document.getElementById("Itag").hidden = false;		
-    
+				document.getElementById("Itag").style.zIndex = 3    
 				document.getElementById("Itag").src="email.html"	
 			}
 		</script>
