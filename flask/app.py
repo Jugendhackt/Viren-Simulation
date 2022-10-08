@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, escape
 import json
 import sqlite3
 import datetime
@@ -50,7 +50,7 @@ def books():
                  VALUES (?, ?, ?, ?)"""
         cursor = cursor.execute(sql, (id, cookies, viren, phishing))
         conn.commit() # pyright: ignore
-        return "user with the id {} created".format(id), 201
+        return "user with the id {} created".format(escape(id)), 201
 
 @limits(calls=5, period=60)
 @app.route("/api/results/<id>", methods=["GET", "PUT", "DELETE"])
@@ -94,7 +94,7 @@ def single_book(id):
         sql = """ DELETE FROM users WHERE id=? """
         conn.execute(sql, (id,)) # pyright: ignore
         conn.commit() # pyright: ignore 
-        return "user with the id {} has been  D E S T R O Y E D.".format(id), 200
+        return "user with the id {} has been  D E S T R O Y E D.".format(escape(id)), 200
 
 @limits(calls=5, period=60)
 @app.route('/api/timer/fertig', methods=['POST'])
