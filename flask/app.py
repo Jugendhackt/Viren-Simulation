@@ -8,7 +8,7 @@ app = Flask(__name__)
 def db_connection():
     conn = None
     try:
-        conn = sqlite3.connect("database.db")
+        conn = sqlite3.connect("flask/database.db")
     except sqlite3.error as e: # pyright: ignore
         print(e)
     return conn
