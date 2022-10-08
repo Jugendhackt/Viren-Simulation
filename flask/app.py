@@ -39,7 +39,7 @@ def books():
         if results is not None:
             return str(results)
 
-    if request.method == "POST":
+    if request.method == "POST": # Diese Methode ist zum erstellen von Daten
         id = request.form["id"]
         cookies = request.form["cookies"]
         viren = request.form["viren"]
@@ -65,7 +65,7 @@ def single_book(id):
         else:
             return "Something went wrong, this was NOT reported (lol)", 404
 
-    if request.method == "PUT":
+    if request.method == "PUT": # Diese methode ist zum updaten der Daten
         sql = """UPDATE users
                 SET id=?,
                     cookies=?,
@@ -80,7 +80,7 @@ def single_book(id):
             "cookie": cookies,
             "viren": viren,
         }
-        conn.execute(sql, (id, cookies, viren)) # pyright: ignore
+        conn.execute(sql, (id, cookies, viren, id)) # pyright: ignore
         conn.commit() # pyright: ignore
         return jsonify(updated_book)
 
