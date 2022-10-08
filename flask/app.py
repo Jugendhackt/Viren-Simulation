@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import json
 import sqlite3
+import datetime
 
 app = Flask(__name__)
 
@@ -90,13 +91,18 @@ def single_book(id):
         conn.commit() # pyright: ignore 
         return "user with the id {} has been  D E S T R O Y E D.".format(id), 200
 
-@app.route('/fertig', methods=['POST'])
+@app.route('/api/timer/fertig', methods=['POST'])
 def fertig():
     if request.method == 'POST':
         data = request.get_json()
         print(data)
         return jsonify(data)
 
+@app.route('/api/timer/started', methods=['POST'])
+def timer(): # Frontend reports when the timer started
+    if request.method == 'POST':
+        print('Timer started at ' + str(datetime.datetime.now()))
+        return 'soon:tm:'
 
 if __name__ == "__main__":
     app.run()
