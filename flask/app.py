@@ -8,7 +8,7 @@ app = Flask(__name__)
 def db_connection():
     conn = None
     try:
-        conn = sqlite3.connect("books.sqlite")
+        conn = sqlite3.connect("database.db")
     except sqlite3.error as e: # pyright: ignore
         print(e)
     return conn
@@ -90,4 +90,4 @@ def single_book(id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
