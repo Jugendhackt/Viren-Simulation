@@ -106,12 +106,11 @@ def fertig():
 def timer(): # Frontend reports when the timer started
     if request.method == 'POST':
         print('Timer started at ' + str(datetime.datetime.now()))
-        id = request.form["id"]
-        print("id " + id)
+        id = request.json
         sql = """ INSERT INTO users (id, cookies, viren, phishing) values (?, ?, ?, ?) """
         conn = db_connection()
         cursor = conn.cursor() # pyright: ignore
-        cursor.execute(sql, (id, 0, 0, 0))
+        cursor.execute(sql, (str(id['id']), 0, 0, 0))
         conn.commit() # pyright: ignore
         conn.close() # pyright: ignore
         return 'Timer started at ' + str(datetime.datetime.now())
@@ -148,7 +147,7 @@ def emailvonoma():
 def pizzamail():
     return render_template('mail/pizza/pizza.html')
 
-@app.route('/getmail/<str:name>')
+#@app.route('/getmail/<str:name>')
 
 if __name__ == "__main__":
     app.run()

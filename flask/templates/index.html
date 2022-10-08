@@ -35,9 +35,12 @@
 		async function start() {
 			fetch("http://127.0.0.1:5000/api/timer/started", {
 				method: 'POST',
-				body: {
-					"id": Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
-				}
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					"id": Math.random().toString(36).substr(2, 9)
+				})
 			}).then((resp) => resp.json())
 			.then((data) => console.log(data));
 			// sleep function
