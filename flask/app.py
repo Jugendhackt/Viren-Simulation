@@ -149,6 +149,8 @@ def pizzamail():
     return render_template('mail/pizza/pizza.html')
 
 @app.route('/getmail/<str:name>')
+def getmail():
+    ms = ['mama', 'papa', 'oma', 'opa', 'pizza', '']
 
 if __name__ == "__main__":
     app.run()
