@@ -44,7 +44,7 @@ def books():
         return "user with the id {} created".format(id), 201
 
 
-@app.route("/api/results/<int:id>", methods=["GET", "PUT", "DELETE"])
+@app.route("/api/results/<id>", methods=["GET", "PUT", "DELETE"])
 def single_book(id):
     conn = db_connection()
     cursor = conn.cursor() # pyright: ignore

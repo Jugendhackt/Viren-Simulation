@@ -1,5 +1,5 @@
 body{
-    background-image: url("Desktopbackground.png");
+    background-image: url("../static/img/Desktopbackground.png");
     background-size: cover;
 }
 .BrowserButton{
