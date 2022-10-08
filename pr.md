@@ -1,0 +1,5 @@
+- finn: einleitung
+- thomas:daten & tech. frontend
+- halil: daten & tech. backend
+- arne: datenbank
+- luca: ende
