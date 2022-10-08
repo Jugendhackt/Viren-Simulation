@@ -47,49 +47,48 @@ def books():
                  VALUES (?, ?, ?)"""
         cursor = cursor.execute(sql, (id, cookies, viren))
         conn.commit() # pyright: ignore
-        return f"user with the id {0} created".format(request.form["id"]), 201
+        return "user with the id {} created".format(id), 201
 
 
-@app.route("/book/<int:id>", methods=["GET", "PUT", "DELETE"])
+@app.route("/results/<int:id>", methods=["GET", "PUT", "DELETE"])
 def single_book(id):
     conn = db_connection()
     cursor = conn.cursor() # pyright: ignore
-    book = None
+    results = None
     if request.method == "GET":
-        cursor.execute("SELECT * FROM book WHERE id=?", (id,))
+        cursor.execute("SELECT * FROM users WHERE id=?", (id,))
         rows = cursor.fetchall()
         for r in rows:
-            book = r
-        if book is not None:
-            return jsonify(book), 200
+            results = r
+        if results is not None:
+            return jsonify(results), 200
         else:
-            return "Something wrong", 404
+            return "Something went wrong, this was NOT reported (lol)", 404
 
     if request.method == "PUT":
-        sql = """UPDATE book
-                SET title=?,
-                    author=?,
-                    language=?
+        sql = """UPDATE users
+                SET id=?,
+                    cookies=?,
+                    viren=?
                 WHERE id=? """
 
-        author = request.form["author"]
-        language = request.form["language"]
-        title = request.form["title"]
+        id = request.form["id"]
+        cookies = request.form["cookies"]
+        viren = request.form["viren"]
         updated_book = {
             "id": id,
-            "author": author,
-            "language": language,
-            "title": title,
+            "cookie": cookies,
+            "viren": viren,
         }
-        conn.execute(sql, (author, language, title, id)) # pyright: ignore
+        conn.execute(sql, (id, cookies, viren)) # pyright: ignore
         conn.commit() # pyright: ignore
         return jsonify(updated_book)
 
     if request.method == "DELETE":
-        sql = """ DELETE FROM book WHERE id=? """
+        sql = """ DELETE FROM users WHERE id=? """
         conn.execute(sql, (id,)) # pyright: ignore
         conn.commit() # pyright: ignore 
-        return "The book with id: {} has been ddeleted.".format(id), 200
+        return "user with the id {} has been  D E S T R O Y E D.".format(id), 200
 
 
 if __name__ == "__main__":
