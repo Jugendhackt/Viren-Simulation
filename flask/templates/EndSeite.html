@@ -40,6 +40,7 @@
       const ff = fetch("/api/results/" + sessionStorage.getItem("id"))
         .then((val) => val.json())
         .then((data) => {
+          console.log(data);
           document.getElementById("cookies").innerHTML = data[1];
           document.getElementById("viren").innerHTML = data[2];
           document.getElementById("phishing").innerHTML = data[3];
@@ -47,6 +48,10 @@
 
         if (x == 0) {
           document.getElementById("insgesamttxt").innerHTML = "Herzlichen Glückwunsch! Du hättest dir";
+        }
+        
+        if (document.getElementById("cookies") = 1) {
+            document.getElementById("cookies").innerHTML = "Cookie";
         }
     </script>
   </body>
