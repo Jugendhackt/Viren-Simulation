@@ -45,6 +45,7 @@
 			}).then((resp) => resp.json())
 			.then((data) => console.log(data));
 			sessionStorage.setItem("id", id)
+			document.cookie = "id=" + id
 			// sleep function
 			function sleep(ms) {
 				return new Promise(resolve => setTimeout(resolve, ms));
