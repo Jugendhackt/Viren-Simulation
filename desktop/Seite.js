@@ -1,4 +1,12 @@
-function Hallo(P1){
+function Browser(){
+
+    
+}
+function Explorer(){
+
+    
+}
+function Email(){
 
     
 }
