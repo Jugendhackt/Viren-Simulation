@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=-1">
+    <title>Instagram</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="./instagram.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper-head">
+      <div class="header">
+        <div class="header-logo">
+          <img src="./insta-logo.png" style="width:60px">
+        </div>
+        <div class="header-split">
+        <div class="header-name">
+          <img src="./insta-name.png" style="height:60px;width=240px">
+        </div>
+      </div>
+    </div>
+    <div class="mail-body">
+      <h2>Copyright Infringement</h2>
+      <p>Hello @user,<br/>We regret to inform you that your account will be suspended because you have violated the copyright laws. Your account will be deleted within 24 hours. If you think we are making a mistake, please verify, to secure your account</p>
+      <button class="verify_btn" onclick="verify_click()">Verify account</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script>
+      function verify_click() {
+        var counter = 0;
+        try {
+          counter = window.sessionStorage.getItem("fehler_count");
+        } catch {}
+        counter++;
+        window.sessionStorage.setItem("fehler_count", counter);
+        alert("Das war ein Fehler");
+      }
+    </script>
+  </body>
+</html>
