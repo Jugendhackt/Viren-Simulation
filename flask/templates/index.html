@@ -32,12 +32,19 @@
 		<p>Dies ist ein 30 Minütiger Test</p>
 	</div>
 	<script>
-		function start() {
-			fetch("http://localhost:5000/api/timer/start", {
-				method: 'POST'
+		async function start() {
+			fetch("http://127.0.0.1:5000/api/timer/started", {
+				method: 'POST',
+				body: {
+					"id": Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+				}
 			}).then((resp) => resp.json())
 			.then((data) => console.log(data));
-			window.location.href="desktop";
+			// sleep function
+			function sleep(ms) {
+				return new Promise(resolve => setTimeout(resolve, ms));
+			}
+			await sleep(5000).then(window.location.href="desktop")
 		}
 	</script>
 </body>

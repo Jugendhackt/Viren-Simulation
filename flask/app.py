@@ -107,6 +107,7 @@ def timer(): # Frontend reports when the timer started
     if request.method == 'POST':
         print('Timer started at ' + str(datetime.datetime.now()))
         id = request.form["id"]
+        print("id " + id)
         sql = """ INSERT INTO users (id, cookies, viren, phishing) values (?, ?, ?, ?) """
         conn = db_connection()
         cursor = conn.cursor() # pyright: ignore
