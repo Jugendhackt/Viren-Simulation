@@ -33,6 +33,7 @@
     <script>
         const ss=window.sessionStorage
        var x = ss.getItem("fehler_count");
+       if (x===null)x=0
         console.log(x);
         document.getElementById("Gesamt").innerHTML=x
         const ff=fetch("/api/results/"+ss.getItem("id"))
