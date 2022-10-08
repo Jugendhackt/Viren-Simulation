@@ -120,37 +120,9 @@ def timer(): # Frontend reports when the timer started
 def desktop():
     return render_template('Desktop.html')
 
-@app.route('/email.html', methods=['GET'])
-def emailhtml():
-    return render_template("email.html")
-
-@app.route('/mails/papa/papa.html')
-def mailvonpapa():
-    return render_template('mail/papa/papa.html')
-
-@app.route('/mails/instagram/instagram.html')
-def mailvoninsta():
-    return render_template('mail/instagram/instagram.html')
-    
-@app.route('/mails/gewinner/gewinner.html')
-def gewinnermail():
-    return render_template('mail/gewinner/gewinner.html')
-
-@app.route('/mails/mama/mama.html')
-def emailvonmama():
-    return render_template('mail/mama/mama.html')
-
-@app.route('/mails/oma/oma.html')
-def emailvonoma():
-    return render_template('mail/oma/oma.html')
-
-@app.route('/mails/pizza/pizza.html')
-def pizzamail():
-    return render_template('mail/pizza/pizza.html')
-
-@app.route('/getmail/<str:name>')
-def getmail():
-    ms = ['mama', 'papa', 'oma', 'opa', 'pizza', '']
+@app.route('/getmail/<name>')
+def getmail(name):
+    return render_template(f'{name}/{name}.html')
 
 if __name__ == "__main__":
     app.run()
