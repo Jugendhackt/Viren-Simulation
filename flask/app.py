@@ -122,7 +122,10 @@ def desktop():
 
 @app.route('/getmail/<name>')
 def getmail(name):
-    return render_template(f'{name}/{name}.html')
+    if 'css' in name:
+        return
+    else:
+        return render_template(f'{name}/{name}.html')
 
 @app.route('/email.html')
 def emailget():
