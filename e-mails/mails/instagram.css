@@ -1,0 +1,22 @@
+.header {
+  display: inline-block;
+}
+
+.header-logo {
+  display: inline-block;
+}
+
+.header-name {
+  display: inline-block;
+}
+
+.header-split {
+  display: inline-block;
+  border-left: 2px solid grey;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.mail-body {
+  width: 30%;
+}
