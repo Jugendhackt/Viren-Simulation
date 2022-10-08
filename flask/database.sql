@@ -2,6 +2,6 @@
    source sql/database.sql
 
    You can also use this if you're lazy:
-    sqlite3 database.db < sql/database.sql
+    sqlite3 flask/database.db < flask/database.sql
 */
-create table users(id init,results int(15));
+create table users(id init,cookies int, viren int);
