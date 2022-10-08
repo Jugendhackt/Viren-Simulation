@@ -13,6 +13,9 @@ def db_connection():
         print(e)
     return conn
 
+@app.route('/', methods=['GET'])
+def index():
+    return render_template('index.html')
 
 @app.route("/getdata")
 def getdata():
