@@ -31,21 +31,21 @@ def books():
     cursor = conn.cursor() # pyright: ignore
 
     if request.method == "GET":
-        cursor = conn.execute("SELECT * FROM users") # pyright: ignore
+        cursor = conn.execute("SELECT * FROM users ORDER BY id") # pyright: ignore
         results = [
             dict(id=row[0], cookies=row[1], viren=row[2])
             for row in cursor.fetchall()
         ]
         if results is not None:
-            return jsonify(results)
+            return str(results)
 
     if request.method == "POST":
-        new_author = request.form["author"]
-        new_lang = request.form["language"]
-        new_title = request.form["title"]
-        sql = """INSERT INTO book (author, language, title)
+        id = request.form["id"]
+        cookies = request.form["cookies"]
+        viren = request.form["viren"]
+        sql = """INSERT INTO users (id, cookies, viren)
                  VALUES (?, ?, ?)"""
-        cursor = cursor.execute(sql, (new_author, new_lang, new_title))
+        cursor = cursor.execute(sql, (id, cookies, viren))
         conn.commit() # pyright: ignore
         return f"Book with the id: 0 created successfully", 201
 
