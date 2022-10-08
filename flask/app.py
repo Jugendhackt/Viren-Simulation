@@ -25,19 +25,19 @@ def getdata():
 def putdata():
     return render_template("put_data.html")
 
-@app.route("/books", methods=["GET", "POST"])
+@app.route("/results", methods=["GET", "POST"])
 def books():
     conn = db_connection()
     cursor = conn.cursor() # pyright: ignore
 
     if request.method == "GET":
-        cursor = conn.execute("SELECT * FROM book") # pyright: ignore
-        books = [
-            dict(id=row[0], author=row[1], language=row[2], title=row[3])
+        cursor = conn.execute("SELECT * FROM users") # pyright: ignore
+        results = [
+            dict(id=row[0], cookies=row[1], viren=row[2])
             for row in cursor.fetchall()
         ]
-        if books is not None:
-            return jsonify(books)
+        if results is not None:
+            return jsonify(results)
 
     if request.method == "POST":
         new_author = request.form["author"]
