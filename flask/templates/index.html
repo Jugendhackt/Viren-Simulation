@@ -29,10 +29,11 @@
 		<h1>Test starten?</h1>
 		<button onclick="start()">Los gehts!</button>
 		<p>Das ist ein selbsttest, um zu schauen wie viele Viren du dir einfangen würdest.</p>
+		<p>Dies ist ein 30 Minütiger Test</p>
 	</div>
 	<script>
 		function start() {
-			fetch("http://localhost:500/api/timer/start", {
+			fetch("http://localhost:5000/api/timer/start", {
 				method: 'POST'
 			}).then((resp) => resp.json())
 			.then((data) => console.log(data));
