@@ -3,7 +3,7 @@
 <head>
     <style type="text/css"> 
     .schrift{
-        font-size: 80px;
+        font-size: 100px;
         text-align: center;
     }
     .Number{
@@ -13,9 +13,9 @@
     <title>Finished</title>
 </head>
 <body>
-    <center>
+    <div style="text-align:center ;">
     <h1 style="font-size: 100px; ;">Ende</h1>
-    <table >
+    <!--<table >
         <tr >
             <td class="schrift ">coocies</td>
             <td class="schrift ">Viren</td>
@@ -25,10 +25,10 @@
             <td><p class="Number schrift" id="Viren">10</p></td>
             <td><p class="Number schrift" id="Fishing">10</p></td>
         </tr>
-    </table>
+    </table>-->
     <p class="schrift" >Gesamt</p>
     <p class="schrift" id="Gesamt">100</p>
-    </center>
+    </div>
     <!--     -->
     <script>
         const ss=window.sessionStorage
@@ -36,11 +36,11 @@
         console.log(x);
         document.getElementById("Gesamt").innerHTML=x
         const ff=fetch("/api/results/"+ss.getItem("id"))
-        ff.then(val => val.json()).then(data=>{
-            document.getElementById("coocies").innerHTML=data[1]
+        /*ff.then(val => val.json()).then(data=>{
+            document.getElementById("cookies").innerHTML=data[1]
             document.getElementById("Viren").innerHTML=data[2]
             document.getElementById("Fishing").innerHTML=data[3]
-        })//coocies Vieren Fishing
+        })  coocies Vieren Fishing */
     </script>
 </body>
 </html>
