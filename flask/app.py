@@ -73,7 +73,7 @@ def single_book(id):
         sql = """UPDATE users
                 SET id=?,
                     cookies=?,
-                    viren=?
+                    viren=?,
                     phishing=?
                 WHERE id=? """
 

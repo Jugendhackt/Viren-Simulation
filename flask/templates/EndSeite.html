@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <style type="text/css"> 
-    .schrift{
+  <head>
+    <style type="text/css">
+      .text {
         color: white;
-        font-size: 100px;
+        font-size: 25px;
         text-align: center;
-    }
-    .Number{
+      }
+      .num {
         width: 500px;
-    }
+      }
     </style>
     <title>Finished</title>
-</head>
-<body style="background-color:#444444 ;">
-    <div style="text-align:center ;">
-    <h1 class="schrift">Ende</h1>
-    <!--<table >
-        <tr >
-            <td class="schrift ">coocies</td>
-            <td class="schrift ">Viren</td>
-            <td class="schrift">Fishing</td>
-        </tr><tr>
-            <td><p class="Number schrift" id="coocies">10</p></td>
-            <td><p class="Number schrift" id="Viren">10</p></td>
-            <td><p class="Number schrift" id="Fishing">10</p></td>
+  </head>
+  <body style="background-color: #444444">
+    <div style="text-align: center">
+      <h1 class="schrift">Ende</h1>
+      <table>
+        <tr>
+          <td class="text">Cookies</td>
+          <td class="text">Viren</td>
+          <td class="text">Phishing</td>
         </tr>
-    </table>-->
-    <p class="schrift" >Gesamt</p>
-    <p class="schrift" id="Gesamt">100</p>
+        <tr>
+          <td><p class="num text" id="cookies">0</p></td>
+          <small>noch nicht implementiert</small>
+          <td><p class="num text" id="viren">0</p></td>
+          <td><p class="num text" id="phishing">0</p></td>
+        </tr>
+      </table>
+      <p class="text" id="insgesamttxt">Du hättest dir insgesamt</p>
+      <p class="text" id="Gesamt">0</p>
+      <p class="text">Viren eingefangen</p>
     </div>
-    <!--     -->
     <script>
-        const ss=window.sessionStorage
-       var x = ss.getItem("fehler_count");
-       if (x===null)x=0
-        console.log(x);
-        document.getElementById("Gesamt").innerHTML=x
-        const ff=fetch("/api/results/"+ss.getItem("id"))
-        /*ff.then(val => val.json()).then(data=>{
-            document.getElementById("cookies").innerHTML=data[1]
-            document.getElementById("Viren").innerHTML=data[2]
-            document.getElementById("Fishing").innerHTML=data[3]
-        })  coocies Vieren Fishing */
+      var x = sessionStorage.getItem("fehler_count");
+      if (x === null) x = 0;
+      document.getElementById("Gesamt").innerHTML = x;
+      const ff = fetch("/api/results/" + sessionStorage.getItem("id"))
+        .then((val) => val.json())
+        .then((data) => {
+          document.getElementById("cookies").innerHTML = data[1];
+          document.getElementById("viren").innerHTML = data[2];
+          document.getElementById("phishing").innerHTML = data[3];
+        });
+
+        if (x == 0) {
+          document.getElementById("insgesamttxt").innerHTML = "Herzlichen Glückwunsch! Du hättest dir";
+        }
     </script>
-</body>
+  </body>
 </html>
