@@ -44,9 +44,10 @@ def books():
         id = request.form["id"]
         cookies = request.form["cookies"]
         viren = request.form["viren"]
-        sql = """INSERT INTO users (id, cookies, viren)
-                 VALUES (?, ?, ?)"""
-        cursor = cursor.execute(sql, (id, cookies, viren))
+        phishing = request.form["phishing"]
+        sql = """INSERT INTO users (id, cookies, viren, phishing)
+                 VALUES (?, ?, ?, ?)"""
+        cursor = cursor.execute(sql, (id, cookies, viren, phishing))
         conn.commit() # pyright: ignore
         return "user with the id {} created".format(id), 201
 
@@ -71,17 +72,20 @@ def single_book(id):
                 SET id=?,
                     cookies=?,
                     viren=?
+                    phishing=?
                 WHERE id=? """
 
         id = request.form["id"]
         cookies = request.form["cookies"]
         viren = request.form["viren"]
+        phishing = request.form["phishing"]
         updated_book = {
             "id": id,
             "cookie": cookies,
             "viren": viren,
+            "phishing": phishing,
         }
-        conn.execute(sql, (id, cookies, viren, id)) # pyright: ignore
+        conn.execute(sql, (id, cookies, viren, phishing, id)) # pyright: ignore
         conn.commit() # pyright: ignore
         return jsonify(updated_book)
 
@@ -94,15 +98,30 @@ def single_book(id):
 @app.route('/api/timer/fertig', methods=['POST'])
 def fertig():
     if request.method == 'POST':
-        data = request.get_json()
-        print(data)
-        return jsonify(data)
+        id = request.form["id"]
+        cookies = request.form["cookies"]
+        viren = request.form["viren"]
+        phishing = request.form["phishing"]
+        conn = db_connection()
+        cursor = conn.cursor() # pyright: ignore
+        sql = """INSERT INTO users (id, cookies, viren, phishing) VALUES (?, ?, ?, ?)"""
+        cursor = cursor.execute(sql, (id, cookies, viren, phishing))
+        conn.commit() # pyright: ignore
+        conn.close() # pyright: ignore
+        return jsonify({'status': 'success', 'message': 'Timer wurde erfolgreich beendet und Userdaten wurden gespeichert.', })
 
 @app.route('/api/timer/started', methods=['POST'])
 def timer(): # Frontend reports when the timer started
     if request.method == 'POST':
         print('Timer started at ' + str(datetime.datetime.now()))
-        return 'soon:tm:'
+        id = request.form["id"]
+        sql = """ INSERT INTO users (id, cookies, viren, phishing) values (?, ?, ?, ?) """
+        conn = db_connection()
+        cursor = conn.cursor() # pyright: ignore
+        cursor.execute(sql, (id, 0, 0, 0))
+        conn.commit() # pyright: ignore
+        conn.close() # pyright: ignore
+        return 'Timer started at ' + str(datetime.datetime.now())
 
 if __name__ == "__main__":
     app.run()
