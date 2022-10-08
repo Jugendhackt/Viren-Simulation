@@ -115,5 +115,9 @@ def timer(): # Frontend reports when the timer started
         conn.close() # pyright: ignore
         return 'Timer started at ' + str(datetime.datetime.now())
 
+@app.route('/desktop', methods=['GET'])
+def desktop():
+    return render_template('Desktop.html')
+
 if __name__ == "__main__":
     app.run()
