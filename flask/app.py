@@ -148,5 +148,7 @@ def emailvonoma():
 def pizzamail():
     return render_template('mail/pizza/pizza.html')
 
+@app.route('/getmail/<str:name>')
+
 if __name__ == "__main__":
     app.run()
