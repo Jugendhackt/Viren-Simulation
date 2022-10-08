@@ -119,5 +119,9 @@ def timer(): # Frontend reports when the timer started
 def desktop():
     return render_template('Desktop.html')
 
+@app.route('/email.html', methods=['GET'])
+def emailhtml():
+    return render_template("email.html")
+
 if __name__ == "__main__":
     app.run()

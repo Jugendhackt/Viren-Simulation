@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link rel="stylesheet" href="../static/css/Desktop.css">
-<title >Virussimulationstest</title>
-</head> <h1><center>Virussimulationstest</center></h1>
-<body >
-	<iframe id="Itag" frameborder="10" width=1000px height="300px"></iframe>
-	   <div><button class="BrowserButton" type="button" onclick="Hallo('Hallo')"><p class="textunterbutton">Browser</p></button></div>
-	<div><button class="ExplorerButton" type="button" onclick="Hallo('Hallo')"><p class="textunterbutton">Explorer</p></button></div>
-	<div><button class="EmailButton" type="button" onclick="Hallo('Hallo')"><p class="textunterbutton">E-mail</p></button></div>
+	<head>
+		<link rel="stylesheet" href="../static/css/Desktop.css">
+	<title >Virussimulationstest</title>
+	</head> 
+	<body >
+		<h1><center>Virussimulationstest</center></h1>
+		<iframe id="Itag" frameborder="10" width=1000px height="300px"></iframe>
+	   <div>
+			<button class="BrowserButton" type="button" onclick="Hallo('Hallo')">
+			<p class="textunterbutton">Browser</p></button>
+		</div>
+		<div>
+			<button class="ExplorerButton" type="button" onclick="Hallo('Hallo')">
+			<p class="textunterbutton">Explorer</p></button>
+		</div>
+		<div>
+			<button class="EmailButton" type="button" onclick="Email()">
+			<p class="textunterbutton">E-mail</p>
+			</button>
+		</div>
 	
-	<script >
+		<script >
 
-function Browser(){
-
-    
-}
-function Explorer(){
+			function Browser(){
 
     
-}
-function Email(){
+			}
+			function Explorer(){
 
     
-}
-document.getElementById("Itag").src="file:///C:/Users/Dell/Desktop/Projekt/Viren-Simulation/desktop/Desktop.html"	</script>
-</body>
+			}
+			function Email(){
+		
+    
+				document.getElementById("Itag").src="email.html"	
+			}
+		</script>
+	</body>
 </html> 	
 
