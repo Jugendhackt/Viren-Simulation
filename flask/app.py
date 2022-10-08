@@ -17,6 +17,10 @@ def db_connection():
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
+    
+@app.route('/end', methods=['GET'])
+def end():
+    return render_template('EndSeite.html')
 
 @app.route("/api/results", methods=["GET", "POST"])
 def books():
