@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, jsonify
 import json
 import sqlite3
 import datetime
+from ratelimit import limits, RateLimitException
+from backoff import on_exception, expo
 
 app = Flask(__name__)
 
@@ -14,10 +16,13 @@ def db_connection():
         print(e)
     return conn
 
+@on_exception(expo, RateLimitException, max_tries=1)
+@limits(calls=10, period=60, ) # 5 calls per minute
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
+@limits(calls=5, period=60)
 @app.route("/api/results", methods=["GET", "POST"])
 def books():
     conn = db_connection()
@@ -43,7 +48,7 @@ def books():
         conn.commit() # pyright: ignore
         return "user with the id {} created".format(id), 201
 
-
+@limits(calls=5, period=60)
 @app.route("/api/results/<id>", methods=["GET", "PUT", "DELETE"])
 def single_book(id):
     conn = db_connection()
@@ -87,6 +92,7 @@ def single_book(id):
         conn.commit() # pyright: ignore 
         return "user with the id {} has been  D E S T R O Y E D.".format(id), 200
 
+@limits(calls=5, period=60)
 @app.route('/api/timer/fertig', methods=['POST'])
 def fertig():
     if request.method == 'POST':
@@ -107,6 +113,7 @@ def fertig():
         conn.close() # pyright: ignore
         return jsonify({'status': 'success', 'message': 'Timer wurde erfolgreich beendet und Userdaten wurden gespeichert.', })
 
+@limits(calls=5, period=60)
 @app.route('/api/timer/started', methods=['POST'])
 def timer(): # Frontend reports when the timer started
     if request.method == 'POST':
@@ -120,10 +127,12 @@ def timer(): # Frontend reports when the timer started
         conn.close() # pyright: ignore
         return 'Timer started at ' + str(datetime.datetime.now())
 
+@limits(calls=5, period=60)
 @app.route('/desktop', methods=['GET'])
 def desktop():
     return render_template('Desktop.html')
 
+@limits(calls=5, period=60)
 @app.route('/getmail/<name>')
 def getmail(name):
     if 'css' in name:
@@ -131,6 +140,7 @@ def getmail(name):
     else:
         return render_template(f'{name}/{name}.html')
 
+@limits(calls=5, period=60)
 @app.route('/email.html')
 def emailget():
     return render_template('email.html')
