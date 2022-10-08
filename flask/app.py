@@ -21,6 +21,10 @@ def db_connection():
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
+    
+@app.route('/end', methods=['GET'])
+def end():
+    return render_template('EndSeite.html')
 
 @limits(calls=5, period=60)
 @app.route("/api/results", methods=["GET", "POST"])

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css"> 
+    .schrift{
+        font-size: 80px;
+        text-align: center;
+    }
+    .Number{
+        width: 500px;
+    }
+    </style>
+    <title>Finished</title>
+</head>
+<body>
+    <center>
+    <h1 style="font-size: 100px; ;">Ende</h1>
+    <table >
+        <tr >
+            <td class="schrift ">coocies</td>
+            <td class="schrift ">Viren</td>
+            <td class="schrift">Fishing</td>
+        </tr><tr>
+            <td><p class="Number schrift" id="coocies">10</p></td>
+            <td><p class="Number schrift" id="Viren">10</p></td>
+            <td><p class="Number schrift" id="Fishing">10</p></td>
+        </tr>
+    </table>
+    <p class="schrift" >Gesamt</p>
+    <p class="schrift" id="Gesamt">100</p>
+    </center>
+    <!--     -->
+    <script>
+        const ss=window.sessionStorage
+       var x = ss.getItem("fehler_count");
+        console.log(x);
+        document.getElementById("Gesamt").innerHTML=x
+        const ff=fetch("/api/results/"+ss.getItem("id"))
+        ff.then(val => val.json()).then(data=>{
+            document.getElementById("coocies").innerHTML=data[1]
+            document.getElementById("Viren").innerHTML=data[2]
+            document.getElementById("Fishing").innerHTML=data[3]
+        })//coocies Vieren Fishing
+    </script>
+</body>
+</html>
