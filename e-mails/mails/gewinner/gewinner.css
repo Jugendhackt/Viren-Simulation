@@ -1,5 +1,6 @@
+#wrapper {
+  text-align: center;
+}
 .mainmail {
-  margin: auto;
-  padding: 10px;
-  
+  display: inline-block;
 }

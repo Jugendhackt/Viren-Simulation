@@ -4,12 +4,14 @@
     <link rel="stylesheet" href="./gewinner.css">
   </head>
   <body>
-    <div class="mainmail">
-      <h3>You just won 1,000,000$!</h3>
-      <div class="txtblck">
-        <p>Congratulations! You just won 1,000,000$!<br/>All you need to do, to receive it is following the instructinons in the Attachment.<br/>Yours faithfully<br/>John Smith</p>
+    <div class="wrapper">
+      <div class="mainmail">
+        <h3>You just won 1,000,000$!</h3>
+        <div class="txtblck">
+          <p>Congratulations! You just won 1,000,000$!<br/>All you need to do, to receive it is following the instructinons in the Attachment.<br/>Yours faithfully<br/>John Smith</p>
+        </div>
+        <button class="download_btn" onclick="download_attachment()">Download Attachments</button>
       </div>
-      <button class="download_btn" onclick="download_attachment()">Download Attachments</button>
     </div>
     <script>
       function download_attachment() {
@@ -20,7 +22,6 @@
         counter++;
         window.sessionStorage.setItem("fehler_count", counter);
         alert("Das war ein Fehler");
-        //test
       }
     </script>
   </body>
