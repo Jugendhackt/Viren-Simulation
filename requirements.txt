@@ -2,4 +2,3 @@ flask
 backoff
 ratelimit
 datetime
-sqlite3
