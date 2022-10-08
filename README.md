@@ -1,5 +1,10 @@
 # Viren-Simulation
 
+# Usage
+- Start the server in `flask` dir, by running `flask run`.
+- Go to `localhost:5000`
+- Start!
+
 ## API Endpoints
 - `/api/results` - POSTing to this endpoint will create the user
 - `/api/results/:id` - GETting this will return user data, PUTting will update the user, and DELETEing will _delete_ the user
