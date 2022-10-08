@@ -96,8 +96,13 @@ def fertig():
         phishing = request.form["phishing"]
         conn = db_connection()
         cursor = conn.cursor() # pyright: ignore
-        sql = """INSERT INTO users (id, cookies, viren, phishing) VALUES (?, ?, ?, ?)"""
-        cursor = cursor.execute(sql, (id, cookies, viren, phishing))
+        sql = """UPDATE users
+                SET id=?,
+                    cookies=?,
+                    viren=?,
+                    phishing=?
+                WHERE id=? """
+        cursor = cursor.execute(sql, (id, cookies, viren, phishing, id))
         conn.commit() # pyright: ignore
         conn.close() # pyright: ignore
         return jsonify({'status': 'success', 'message': 'Timer wurde erfolgreich beendet und Userdaten wurden gespeichert.', })
