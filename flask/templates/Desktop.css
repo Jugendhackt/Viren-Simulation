@@ -33,3 +33,9 @@ body{
     width: 100px;
     height: 100px;
 }
+
+.subd {
+    position: absolute;
+    left: 30%;
+    top: 20%;
+}
