@@ -124,5 +124,9 @@ def desktop():
 def getmail(name):
     return render_template(f'{name}/{name}.html')
 
+@app.route('/email.html')
+def emailget():
+    return render_template('email.html')
+
 if __name__ == "__main__":
     app.run()
