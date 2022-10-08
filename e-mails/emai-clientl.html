@@ -27,6 +27,12 @@ table, th, td {
     
     }
 
+.button {
+    border: none;
+    background: white;
+
+}
+
     </style>
 </head>
 <body>
@@ -65,14 +71,25 @@ table, th, td {
         </tr>
         
         
-          <td><a href="f.html" target="_parent"><b>support@instagram-team.com</b></a></td>
-          <td><b> <a href="f.html" target="_parent"><b>Account Änderungen</a></b></td>
-          <td><b><a href="f.html" target="_parent"><b>08.10.2022 10:05</a></b></td>
+        
+          <td><button onclick= "change_Iframe('/mails/instagram/instagram.html')"><b>support@instagram-team.com</b></button> </td>
+          <td><button onclick= "change_Iframe('/mails/instagram/instagram.html')"><b>Account Änderungen</b></button></td>
+          <td><button onclick= "change_Iframe('/mails/instagram/instagram.html')"><b>08.10.2022 10:05</b></button></td>
     </table>
-  </center>
-    <hr>
-    <center>
-    <iframe width="900" height="500" src="./mails/instagram/instagram.html"></iframe>
-    </center>
+</center>
+<hr>
+<center>
+    <iframe id="ifr" width="900" height="500" src= pfad></iframe>
+
+</center>
+    <script>
+        function change_Iframe(pfad)
+        {
+            var  pfad;
+            var i = document.getElementById("ifr").src = pfad;
+        }
+
+    </script>
+ 
 </body>
 </html>
