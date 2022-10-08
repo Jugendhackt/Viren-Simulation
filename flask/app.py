@@ -123,5 +123,19 @@ def desktop():
 def emailhtml():
     return render_template("email.html")
 
+@app.route('/mails/papa/papa.html')
+def mailvonpapa():
+    return render_template('mail/papa/papa.html')
+
+@app.route('/mails/instagram/instagram.html')
+def mailvoninsta():
+    return render_template('mail/instagram/instagram.html')
+    
+@app.route('mails/gewinner/gewinner.html')
+def gewinnermail():
+    return render_template('mail/gewinner/gewinner.html')
+
+@app.route('mails/')
+
 if __name__ == "__main__":
     app.run()
