@@ -18,15 +18,7 @@ def db_connection():
 def index():
     return render_template('index.html')
 
-@app.route("/getdata")
-def getdata():
-    return render_template("get_data.html")
-
-@app.route("/putdata")
-def putdata():
-    return render_template("put_data.html")
-
-@app.route("/results", methods=["GET", "POST"])
+@app.route("/api/results", methods=["GET", "POST"])
 def books():
     conn = db_connection()
     cursor = conn.cursor() # pyright: ignore
@@ -52,7 +44,7 @@ def books():
         return "user with the id {} created".format(id), 201
 
 
-@app.route("/results/<int:id>", methods=["GET", "PUT", "DELETE"])
+@app.route("/api/results/<int:id>", methods=["GET", "PUT", "DELETE"])
 def single_book(id):
     conn = db_connection()
     cursor = conn.cursor() # pyright: ignore
