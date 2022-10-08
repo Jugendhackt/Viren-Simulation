@@ -36,6 +36,7 @@
 	</div>
 	<script>
 		async function start() {
+			docuemnt.sessionStorage.setItem("fehler_count", 0)
 			const id = Math.random().toString(36).substr(2, 9)
 			fetch("http://127.0.0.1:5000/api/timer/started", {
 				method: 'POST',
