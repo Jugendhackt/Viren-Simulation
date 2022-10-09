@@ -1,5 +1,8 @@
 # Viren-Simulation
 #### Finn, Thomas, Luca, Arne, Alex, Jakob, Marius, Stefan, Halil
+## Installation Virus-Simulator
+#### git clone https://github.com/Jugendhackt/Viren-Simulation.git
+#### ./ setup.sh
 ## API Endpoints
 - `/api/results` - POSTing to this endpoint will create the user
 - `/api/results/:id` - GETting this will return user data, PUTting will update the user, and DELETEing will _delete_ the user
