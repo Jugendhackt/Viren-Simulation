@@ -1,5 +1,6 @@
 # Viren-Simulation
 [![CodeQL](https://github.com/Jugendhackt/Viren-Simulation/actions/workflows/codeql.yml/badge.svg)](https://github.com/Jugendhackt/Viren-Simulation/actions/workflows/codeql.yml)
+[![Python application](https://github.com/Jugendhackt/Viren-Simulation/actions/workflows/python-app.yml/badge.svg)](https://github.com/Jugendhackt/Viren-Simulation/actions/workflows/python-app.yml)
 #### Finn, Thomas, Luca, Arne, Alex, Jakob, Marius, Stefan, Halil
 ## Installation Virus-Simulator
 #### `git clone https://github.com/Jugendhackt/Viren-Simulation.git`
