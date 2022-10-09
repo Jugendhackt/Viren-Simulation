@@ -68,7 +68,7 @@
 				</button>
 			</div>
 			<div>
-				<button class="ExplorerButton" type="button" onclick="Hallo('Hallo')">
+				<button class="ExplorerButton" type="button" onclick="Explorer()">
 				<p class="textunterbutton">Explorer</p></button>
 			</div>
 			<div>
@@ -88,7 +88,10 @@
 			document.getElementById("main").style.zIndex = -1;
 			document.getElementById("subd").style.zIndex = -3;
 			function Explorer(){
-
+				document.getElementById("Itag").hidden = false;		
+				document.getElementById("Itag").style.zIndex = 3    
+				document.getElementById("Itag").src="file_manger.html"	
+				openModal();
     
 			}
 			function Email(){
@@ -138,4 +141,3 @@
 		</script>
 	</body>
 </html> 	
-

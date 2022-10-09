@@ -1,0 +1,17 @@
+
+app = "virensimulator123"
+
+
+[build]
+  image = "flyio/virensimulator123:latest"
+
+
+
+
+[[services]]
+  internal_port = 8080
+
+
+
+
+
