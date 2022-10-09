@@ -158,7 +158,7 @@ def websiteget():
 @app.route('/browser', methods=['GET'])
 def browserget():
     return render_template('browser.html')
-
+#explorer
 @app.route('/file_manger.html')
 def file_manger():
     return render_template('file_manger.html')
