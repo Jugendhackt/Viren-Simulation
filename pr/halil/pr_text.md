@@ -1,0 +1,1 @@
+Das Backend haben wir mit Python geschrieben, weil es schnell, leicht, und gut lesbar ist. Als web framework nutzen wir Flask, flask hat schon implementierte Dienste, wie Protokolle, thread management und so.
