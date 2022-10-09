@@ -104,6 +104,27 @@
           document.cookie = "dakitecCookieBanner = 1; path=/; secure; expires=" + cookieDate.toUTCString();
     
           footerCookie.style.display = "none";
+
+          try {
+            counter = sessionStorage.getItem('cookies');
+          } catch {}
+          counter++
+          sessionStorage.setItem('cookies', counter);
+
+          // send a PUT request with form to /api/results/<id>
+            fetch('/api/results/' + sessionStorage.getItem('id'), {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              'cookies': counter
+            })
+          }).then(function(response) {
+            return response.json();
+          }).then(function(data) {
+            console.log(data);
+          });
         };
       </script>
     

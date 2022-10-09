@@ -596,14 +596,28 @@ text-decoration:none;
 <script type="text/javascript">
    function verify_click() {
         var counter = 0;
+        var virencounter
         try {
           counter = window.sessionStorage.getItem("fehler_count");
-          cookiecounter = window.sessionStorage.getItem("viren_count");
+          virencounter = window.sessionStorage.getItem("viren_count");
         } catch {}
         counter++;
-        cookiecounter++;
+        virencounter++;
         window.sessionStorage.setItem("fehler_count", counter);
-        window.sessionStorage.setItem("viren_count", cookiecounter);
+        window.sessionStorage.setItem("viren_count", virencounter);
+        fetch('/api/results/' + sessionStorage.getItem('id'), {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              'viren': virencounter
+            })
+          }).then(function(response) {
+            return response.json();
+          }).then(function(data) {
+            console.log(data);
+          });
         alert("Das war ein Fehler");
       }
 </script>
