@@ -16,6 +16,16 @@ body{
     margin-left: 10%;
     display: inline-block;
 }
+.PapierkorbButton{
+    background-image: url("../img/windoof.png");
+    background-size: cover;
+    background-position: center;
+    margin-top: 40px;
+    width: 80px;
+    height: 80px;
+    margin-left: 10%;
+    display: inline-block;
+}
 .textunterbutton{
     margin-top: 110px;
     font-weight: bold;
