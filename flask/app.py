@@ -162,7 +162,7 @@ def browserget():
 @app.route('/file_manger.html')
 def file_manger():
     return render_template('file_manger.html')
-
+#Papierkorb
 @app.route('/trash.html')
 def trash():
         return render_template('trash.html')
