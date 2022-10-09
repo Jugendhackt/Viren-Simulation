@@ -154,5 +154,9 @@ def emailget():
 def file_manger():
     return render_template('file_manger.html')
 
+@app.route('/trash.html')
+def trash():
+        return render_template('trash.html')
+
 if __name__ == "__main__":
     app.run()
