@@ -154,5 +154,9 @@ def emailget():
 def websiteget():
     return render_template('website.html')
 
+@app.route('/browser', methods=[GET])
+def browserget():
+    return render_template('browser.html')
+
 if __name__ == "__main__":
     app.run()
