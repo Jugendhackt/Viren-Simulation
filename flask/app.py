@@ -147,6 +147,7 @@ def getmail(name):
         return render_template(f'{name}/{name}.html')
 
 @limits(calls=5, period=60)
+# emailget
 @app.route('/email.html')
 def emailget():
     return render_template('email.html')
