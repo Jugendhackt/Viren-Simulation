@@ -154,7 +154,7 @@ def emailget():
 def websiteget():
     return render_template('website.html')
 
-@app.route('/browser', methods=[GET])
+@app.route('/browser', methods=['GET'])
 def browserget():
     return render_template('browser.html')
 
