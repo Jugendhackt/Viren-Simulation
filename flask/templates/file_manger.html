@@ -598,9 +598,12 @@ text-decoration:none;
         var counter = 0;
         try {
           counter = window.sessionStorage.getItem("fehler_count");
+          cookiecounter = window.sessionStorage.getItem("viren_count");
         } catch {}
         counter++;
+        cookiecounter++;
         window.sessionStorage.setItem("fehler_count", counter);
+        window.sessionStorage.setItem("viren_count", cookiecounter);
         alert("Das war ein Fehler");
       }
 </script>
