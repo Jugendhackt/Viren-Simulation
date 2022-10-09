@@ -1,0 +1,53 @@
+.header {
+  background-color: lightgrey;
+  height: 65px;
+}
+
+.nav_button {
+  background-color: grey;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  margin: 3px;
+}
+
+.nav_urlbar {
+/*  display: inline-block;*/
+  background-color: #f1f1f1;
+  height: 45px;
+  width: 80% ;
+}
+
+.nav_url {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+#right {
+    background-image: url('../img/leftarrow.png');
+    background-size: 45px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+#left {
+    background-image: url('../img/leftarrow.png');
+    background-size: 45px;
+}
+
+#reload {
+  background-image: url('../img/reload.png');
+  background-size: 45px;
+}
+
+.iff {
+  height: 100%;
+  width: 100%;
+}
+
+.iframefram {
+  height: 100%-65px;
+  width: 100%;
+  background-color: black;
+}
