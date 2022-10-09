@@ -3,6 +3,7 @@
 [![Python application](https://github.com/Jugendhackt/Viren-Simulation/actions/workflows/python-app.yml/badge.svg)](https://github.com/Jugendhackt/Viren-Simulation/actions/workflows/python-app.yml)
 Jugend hackt Berlin 2022
 #### [Finn](https://www.github.com/fingadumbledore), [Thomas](https://www.github.com/hyperbel), [Luca](https://www.github.com/erase01), [Arne](https://www.github.com/amxx1679), [Alex](www.github.com/alexbecked), [Jakob](https://www.github.com/ferox123), [Marius](https://www.github.com/gnom79), [Stefan](https://www.github.com/stefan1293), [Halil](https://www.github.com/connordoesdev)
+[Präsentation](https://pad.medialepfade.net/04f5z2iYSz6UdZ4EPwJ1SA#/)
 ## Installation Virus-Simulator
 #### `git clone https://github.com/Jugendhackt/Viren-Simulation.git`
 #### `./setup.sh`
