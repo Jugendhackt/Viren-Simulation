@@ -150,7 +150,7 @@ def getmail(name):
 @app.route('/email.html')
 def emailget():
     return render_template('email.html')
-
+#website
 @app.route('/website', methods=['GET'])
 def websiteget():
     return render_template('website.html')
