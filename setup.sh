@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo -e "\e[1;42m[ARIVAAA] Starting setup"
 
