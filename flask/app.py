@@ -150,6 +150,14 @@ def getmail(name):
 def emailget():
     return render_template('email.html')
 
+@app.route('/website', methods=['GET'])
+def websiteget():
+    return render_template('website.html')
+
+@app.route('/browser', methods=['GET'])
+def browserget():
+    return render_template('browser.html')
+
 @app.route('/file_manger.html')
 def file_manger():
     return render_template('file_manger.html')
