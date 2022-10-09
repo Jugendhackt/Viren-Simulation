@@ -20,6 +20,7 @@ def db_connection():
 @on_exception(expo, RateLimitException, max_tries=1)
 @limits(calls=10, period=60, ) # 5 calls per minute
 @app.route('/', methods=['GET'])
+#Endpoints
 def index():
     return render_template('index.html')
     
