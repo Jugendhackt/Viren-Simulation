@@ -150,5 +150,9 @@ def getmail(name):
 def emailget():
     return render_template('email.html')
 
+@app.route('/file_manger.html')
+def file_manger():
+    return render_template('file_manger.html')
+
 if __name__ == "__main__":
     app.run()
