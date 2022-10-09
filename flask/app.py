@@ -135,6 +135,7 @@ def timer(): # Frontend reports when the timer started
 
 @limits(calls=5, period=60)
 @app.route('/desktop', methods=['GET'])
+#desktop
 def desktop():
     return render_template('Desktop.html')
 
