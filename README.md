@@ -1,7 +1,7 @@
 # Viren-Simulation
 [![CodeQL](https://github.com/Jugendhackt/Viren-Simulation/actions/workflows/codeql.yml/badge.svg)](https://github.com/Jugendhackt/Viren-Simulation/actions/workflows/codeql.yml)
 [![Python application](https://github.com/Jugendhackt/Viren-Simulation/actions/workflows/python-app.yml/badge.svg)](https://github.com/Jugendhackt/Viren-Simulation/actions/workflows/python-app.yml)
-#### Finn, Thomas, Luca, Arne, Alex, Jakob, Marius, Stefan, Halil
+#### [Finn](www.github.com/fingadumbledore), [Thomas](www.github.com/hyperbel), [Luca](www.github.com/erase01), [Arne](www.github.com/amxx1679), Alex, [Jakob](www.github.com/ferox123), [Marius](www.github.com/gnome79), [Stefan](www.github.com/stefan1293), [Halil](www.github.com/connordoesdev)
 ## Installation Virus-Simulator
 #### `git clone https://github.com/Jugendhackt/Viren-Simulation.git`
 #### `./setup.sh`
