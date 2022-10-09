@@ -33,6 +33,10 @@
       <p class="text" id="Gesamt">0</p>
       <p class="text">Viren eingefangen</p>
     </div>
+    <div style="text-align: center;">
+    <p>Insgesamt Fehler:</p>
+    <p id="Fehler">0</p>
+    </div>
     <script>
       var x = sessionStorage.getItem("fehler_count");
       if (x === null) x = 0;
@@ -45,6 +49,8 @@
           document.getElementById("viren").innerHTML = data[2];
           document.getElementById("phishing").innerHTML = data[3];
         });
+
+      document.getElementById("Fehler").innerHTML = x;
 
         if (x == 0) {
           document.getElementById("insgesamttxt").innerHTML = "Herzlichen Glückwunsch! Du hättest dir";
