@@ -48,7 +48,7 @@ def books():
             if results is not None:
                 return str(results)
         else:
-            return "{0,100,100,100,'No isert allowed'}"
+            return "{0,100,100,100,'No sql-injection allowed'}"
 
     if request.method == "POST": # Diese Methode ist zum erstellen von Daten
         id = request.form["id"]
