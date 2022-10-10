@@ -35,13 +35,17 @@ def books():
     cursor = conn.cursor() # pyright: ignore
 
     if request.method == "GET":
-        cursor = conn.execute("SELECT * FROM users ORDER BY id") # pyright: ignore
-        results = [
-            dict(id=row[0], cookies=row[1], viren=row[2])
-            for row in cursor.fetchall()
-        ]
-        if results is not None:
-            return str(results)
+        ID=request.args.get("ID")
+        if ID.isalnum():
+            cursor = conn.execute("SELECT * FROM users WHERE id='"+ID+"' ORDER BY id") # pyright: ignore
+            results={}
+            for row in cursor.fetchall():
+                results[row[0]]=dict(cookies=row[1], viren=row[2],phishing=row[3])
+            print(results)
+            if results is not None:
+                return str(results)
+        else:
+            return "{0,100,100,100,'No isert allowed'}"
 
     if request.method == "POST": # Diese Methode ist zum erstellen von Daten
         id = request.form["id"]

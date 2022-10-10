@@ -41,13 +41,13 @@
       var x = sessionStorage.getItem("fehler_count");
       if (x === null) x = 0;
       document.getElementById("Gesamt").innerHTML = x;
-      const ff = fetch("/api/results/" + sessionStorage.getItem("id"))
+      const ff = fetch("/api/results?ID="+sessionStorage.getItem("id"))  //"+sessionStorage.getItem("id")
         .then((val) => val.json())
         .then((data) => {
           console.log(data);
-          document.getElementById("cookies").innerHTML = data[1];
-          document.getElementById("viren").innerHTML = data[2];
-          document.getElementById("phishing").innerHTML = data[3];
+          document.getElementById("cookies").innerHTML = data[sessionStorage.getItem("id")]["cookies"];
+          document.getElementById("viren").innerHTML = data[sessionStorage.getItem("id")]["viren"];
+          document.getElementById("phishing").innerHTML = data[sessionStorage.getItem("id")]["phishing"];
         });
 
       document.getElementById("Fehler").innerHTML = x;
