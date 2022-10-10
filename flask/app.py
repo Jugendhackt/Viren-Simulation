@@ -46,7 +46,7 @@ def books():
             results=json.dumps( dict(cookies=row[1], viren=row[2],phishing=row[3]))
             print("GET Request ID:"+ID+" Result:"+str(results))
             if results is not None:
-                return str(results)
+                return results
         else:
             return "{0,100,100,100,'No sql-injection allowed'}"
 
