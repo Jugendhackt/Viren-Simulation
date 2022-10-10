@@ -39,9 +39,12 @@ def books():
         if ID.isalnum():
             cursor = conn.execute("SELECT * FROM users WHERE id='"+ID+"' ORDER BY id") # pyright: ignore
             results={}
-            for row in cursor.fetchall():
-                results[row[0]]=dict(cookies=row[1], viren=row[2],phishing=row[3])
-            print(results)
+            table=cursor.fetchall()
+            if len(table)==0:
+                table=[[0,"N.A.","N.A.","N.A."]]
+            row=table[0]
+            results=json.dumps( dict(cookies=row[1], viren=row[2],phishing=row[3]))
+            print("GET Request ID:"+ID+" Result:"+str(results))
             if results is not None:
                 return str(results)
         else:

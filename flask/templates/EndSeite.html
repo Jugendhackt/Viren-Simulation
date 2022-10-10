@@ -8,7 +8,7 @@
         text-align: center;
       }
       .num {
-        width: 500px;
+        width: 300px;
       }
     </style>
     <title>Finished</title>
@@ -16,6 +16,7 @@
   <body style="background-color: #444444">
     <div style="text-align: center">
       <h1 class="schrift"><font color="white" face="Arial">Ende</font></h1>
+      <small>noch nicht implementiert</small>
       <table>
         <tr>
           <td class="text">Cookies</td>
@@ -24,7 +25,6 @@
         </tr>
         <tr>
           <td><p class="num text" id="cookies">0</p></td>
-          <small>noch nicht implementiert</small>
           <td><p class="num text" id="viren">0</p></td>
           <td><p class="num text" id="phishing">0</p></td>
         </tr>
@@ -45,9 +45,9 @@
         .then((val) => val.json())
         .then((data) => {
           console.log(data);
-          document.getElementById("cookies").innerHTML = data[sessionStorage.getItem("id")]["cookies"];
-          document.getElementById("viren").innerHTML = data[sessionStorage.getItem("id")]["viren"];
-          document.getElementById("phishing").innerHTML = data[sessionStorage.getItem("id")]["phishing"];
+          document.getElementById("cookies").innerHTML = data["cookies"];
+          document.getElementById("viren").innerHTML = data["viren"];
+          document.getElementById("phishing").innerHTML = data["phishing"];
         });
 
       document.getElementById("Fehler").innerHTML = x;
@@ -56,9 +56,9 @@
           document.getElementById("insgesamttxt").innerHTML = "Herzlichen Glückwunsch! Du hättest dir";
         }
         
-        if (document.getElementById("cookies") = 1) {
-            document.getElementById("cookies").innerHTML = "Cookie";
-        }
+        //if (document.getElementById("cookies") = 1) {
+        //    document.getElementById("cookies").innerHTML = "Cookie";
+        //}
     </script>
   </body>
 </html>
