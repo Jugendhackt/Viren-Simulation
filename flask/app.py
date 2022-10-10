@@ -7,7 +7,7 @@ from backoff import on_exception, expo
 # from config import *
 
 app = Flask(__name__)
-
+ 
 
 def db_connection():
     conn = None
